@@ -34,8 +34,8 @@ cc.Class({
     },
 
     update(dt) {
-        setTimeout(() => {
+        if (agora && agora.bindTextureId) {
             agora.bindTextureId(this.texture.getImpl().getHandle(), this.uid);
-        });
+        }
     },
 });

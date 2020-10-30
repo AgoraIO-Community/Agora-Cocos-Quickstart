@@ -54,8 +54,9 @@
 					"enable": false,
 					"params": {
 						"appid": "660156309",
-						"storeid": "d",
-						"plugin_version": "1.2.9_2.2.0"
+						"store_id": "",
+						"store_id_platform": "",
+						"plugin_version": "1.3.5_2.2.1"
 					}
 				},
 				{

@@ -226,6 +226,7 @@ cc.Class({
             return;
         }
         agora && agora.init(appid);
+        agora && agora.enableVideo();
         this.btnInit.interactable = false;
         this.btnJoin.interactable = true;
         this.ebAppID.string = appid;

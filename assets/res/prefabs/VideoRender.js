@@ -34,8 +34,8 @@ cc.Class({
     },
 
     update(dt) {
-        if (agora && agora.bindTextureId) {
-            agora.bindTextureId(this.texture.getImpl().getHandle(), this.uid);
+        if (agora && agora.bridge && agora.bridge.bindTextureId) {
+            agora.bridge.bindTextureId(this.texture.getImpl().getHandle(), this.uid);
         }
     },
 });

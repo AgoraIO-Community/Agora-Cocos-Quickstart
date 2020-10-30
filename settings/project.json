@@ -11,5 +11,35 @@
     "3D Particle",
     "SafeArea"
   ],
-  "last-module-event-record-time": 1603965057893
+  "last-module-event-record-time": 1603965057893,
+  "group-list": [
+    "default"
+  ],
+  "collision-matrix": [
+    [
+      true
+    ]
+  ],
+  "preview-port": 7456,
+  "design-resolution-width": 960,
+  "design-resolution-height": 640,
+  "fit-width": false,
+  "fit-height": true,
+  "use-project-simulator-setting": false,
+  "simulator-orientation": false,
+  "use-customize-simulator": true,
+  "simulator-resolution": {
+    "height": 640,
+    "width": 960
+  },
+  "facebook": {
+    "appID": "dsdsdsds",
+    "audience": {
+      "enable": true
+    },
+    "enable": false,
+    "live": {
+      "enable": true
+    }
+  }
 }

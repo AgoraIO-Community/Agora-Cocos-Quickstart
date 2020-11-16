@@ -5,32 +5,34 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-cc.Class({
+var VideoRender = cc.Class({
     extends: cc.Component,
-
     properties: {
-        texture: {
+        sprite: {
             default: null,
-            type: cc.Texture2D
+            type: cc.Sprite
         },
         uid: 0
     },
-
     // LIFE-CYCLE CALLBACKS:
-
     onLoad() {
-        console.log('onLoad');
+        console.log('onLoad', this.uid, this.node.width, this.node.height);
         this.texture = new cc.Texture2D();
         this.texture.initWithData(null, cc.Texture2D.PixelFormat.RGBA4444, this.node.width, this.node.height);
-        const frame = new cc.SpriteFrame();
-        frame.setTexture(this.texture);
-        this.getComponent(cc.Sprite).spriteFrame = frame;
+        const frame = new cc.SpriteFrame(this.texture);
+        this.sprite.spriteFrame = frame;
     },
-
-    start() {
-
+    _updateSize() {
+        console.log('_updateSize', this.node.width, this.node.height);
+        this.texture.width = this.node.width;
+        this.texture.height = this.node.height;
     },
-
+    onEnable() {
+        this.node.on('size-changed', this._updateSize, this)
+    },
+    onDisable() {
+        this.node.off('size-changed', this._updateSize, this)
+    },
     update(dt) {
         if (agora && agora.bridge && agora.bridge.bindTextureId) {
             agora.bridge.bindTextureId(this.texture.getImpl().getHandle(), this.uid);

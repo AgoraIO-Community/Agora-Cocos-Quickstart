@@ -1,133 +1,118 @@
+const VideoRender = require('VideoRender');
+
 cc.Class({
     extends: cc.Component,
-
     properties: {
+        target: {
+            default: null,
+            type: cc.Prefab
+        },
         langLabelSetup1PlaceHolder: {
             default: null,
             type: cc.Label
         },
-
         langLabelSetup1BtnLabel: {
             default: null,
             type: cc.Label
         },
-
         langLabelSetup2PlaceHolder: {
             default: null,
             type: cc.Label
         },
-
         langLabelSetup2BtnLabel: {
             default: null,
             type: cc.Label
         },
-
         subscribeRemoteStreamLabel: {
             default: null,
             type: cc.Label
         },
-
         publishLocalStreamLabel: {
             default: null,
             type: cc.Label
         },
-
         subscribeOrPublishStreamLabel: {
             default: null,
             type: cc.Label
         },
-
         btnInit: {
             default: null,
             type: cc.Button
         },
-
         btnJoin: {
             default: null,
             type: cc.Button
         },
-
         btnLocal: {
             default: null,
             type: cc.Button
         },
-
         btnRemote: {
             default: null,
             type: cc.Button
         },
-
         btnCNLang: {
             default: null,
             type: cc.Button
         },
-
         btnENLang: {
             default: null,
             type: cc.Button
         },
-
         ebAppID: {
             default: null,
             type: cc.EditBox
         },
-
         ebChannel: {
             default: null,
             type: cc.EditBox
         },
-
         logListView: {
             default: null,
             type: cc.ScrollView
         },
-
         localSprite: {
             default: null,
             type: cc.Sprite
         },
-
         disableLocalSprite: {
             default: null,
             type: cc.Sprite
         },
-
         remoteSprite: {
             default: null,
             type: cc.Sprite
         },
-
         disableRemoteSprite: {
             default: null,
             type: cc.Sprite
         },
-
         cnLanguageSprite: {
             default: null,
             type: cc.Sprite
         },
-
         enLanguageSprite: {
             default: null,
             type: cc.Sprite
         },
-
         cnLanguageLabel: {
             default: null,
             type: cc.Label
         },
-
         enLanguageLabel: {
             default: null,
             type: cc.Label
         },
-
         itemTemplate: {
             default: null,
             type: cc.Node
         },
+        target: {
+            default: null,
+            type: cc.Prefab
+        },
         joined: false,
-        lang: "zh",
+        lang: 'zh',
         muteRemote: false,
         muteLocal: false,
         logs: 0,
@@ -135,6 +120,7 @@ cc.Class({
 
     // use this for initialization
     onLoad: function () {
+        this.users = [];
         this.initAgoraEvents();
         this.btnInit.interactable = true;
         this.btnJoin.interactable = false;
@@ -171,10 +157,10 @@ cc.Class({
     },
 
     onDestroy: function () {
-        this.uninitAgoraEvents();
+        this.deinitAgoraEvents();
     },
 
-    uninitAgoraEvents: function () {
+    deinitAgoraEvents: function () {
         if (agora && agora.off) {
             agora.off('joinChannelSuccess', this.onJoinChannelSuccess, this);
             agora.off('leaveChannel', this.onLeaveChannel, this);
@@ -198,21 +184,21 @@ cc.Class({
 
     initMultiLang: function () {
         if (this.lang === cc.sys.LANGUAGE_CHINESE) {
-            this.langLabelSetup1PlaceHolder.string = "App ID (声网控制台获取)";
-            this.langLabelSetup1BtnLabel.string = "初始化 (默认已经初始化)";
-            this.langLabelSetup2PlaceHolder.string = "能标识频道的频道名";
-            this.langLabelSetup2BtnLabel.string = this.joined ? "离开频道" : "加入频道";
-            this.subscribeOrPublishStreamLabel.string = "发布和订阅流";
-            this.publishLocalStreamLabel.string = "发布流";
-            this.subscribeRemoteStreamLabel.string = "订阅流";
+            this.langLabelSetup1PlaceHolder.string = 'App ID (声网控制台获取)';
+            this.langLabelSetup1BtnLabel.string = '初始化 (默认已经初始化)';
+            this.langLabelSetup2PlaceHolder.string = '能标识频道的频道名';
+            this.langLabelSetup2BtnLabel.string = this.joined ? '离开频道' : '加入频道';
+            this.subscribeOrPublishStreamLabel.string = '发布和订阅流';
+            this.publishLocalStreamLabel.string = '发布流';
+            this.subscribeRemoteStreamLabel.string = '订阅流';
         } else if (this.lang === cc.sys.LANGUAGE_ENGLISH) {
-            this.langLabelSetup1PlaceHolder.string = "App ID (Get from Agora Dashboard)";
-            this.langLabelSetup1BtnLabel.string = "Initialize (Initialized by default)";
-            this.langLabelSetup2PlaceHolder.string = "Channel Name";
-            this.langLabelSetup2BtnLabel.string = this.joined ? "Leave Channel" : "Join Channel";
-            this.subscribeOrPublishStreamLabel.string = "Publish or subscribe stream";
-            this.publishLocalStreamLabel.string = "Publish";
-            this.subscribeRemoteStreamLabel.string = "Subscribe";
+            this.langLabelSetup1PlaceHolder.string = 'App ID (Get from Agora Dashboard)';
+            this.langLabelSetup1BtnLabel.string = 'Initialize (Initialized by default)';
+            this.langLabelSetup2PlaceHolder.string = 'Channel Name';
+            this.langLabelSetup2BtnLabel.string = this.joined ? 'Leave Channel' : 'Join Channel';
+            this.subscribeOrPublishStreamLabel.string = 'Publish or subscribe stream';
+            this.publishLocalStreamLabel.string = 'Publish';
+            this.subscribeRemoteStreamLabel.string = 'Subscribe';
         }
     },
 
@@ -220,41 +206,48 @@ cc.Class({
         // PLEASE KEEP THIS appId IN SAFE PLACE
         // Get your own App ID at https://docs.agora.io/cn/Interactive%20Gaming/game_c?platform=Cocos%20Creator
         // After you entered the appId, remove ## outside of YOUR_APPID
-        var appid = #YOUR_APPID#;
-        if (appid == "") {
-            this.printLog("Please input appid!");
+        const appid = #YOUR_APPID#;
+        if (appid === '') {
+            this.printLog('Please input appid!');
             return;
         }
         if (agora) {
             agora.init && agora.init(appid);
             agora.enableVideo && agora.enableVideo();
+            agora.startPreview && agora.startPreview();
         }
         this.btnInit.interactable = false;
         this.btnJoin.interactable = true;
         this.ebAppID.string = appid;
         this.ebAppID.enabled = false;
+        this.ebChannel.string = '123';
 
-        this.printLog("Step 1: Init Agora Engine");
-        this.printLog("Init agora, appid: " + appid);
+        this.printLog('Step 1: Init Agora Engine');
+        this.printLog(`Init agora, appid: ${appid}`);
         this.printCode(`agora && agora.init('${appid}');`);
-        this.printLog("Init engine success!");
-        this.printLog("\r\n\r\n");
-        this.printLog("Step 2: Join Channel");
+        this.printLog('Init engine success!');
+        this.printLog('\r\n\r\n');
+        this.printLog('Step 2: Join Channel');
     },
 
     // step2: join Channel
     joinChannel: function () {
         if (this.joined) {
             agora && agora.leaveChannel();
+            for (let i = 0; i < this.users.length; i++) {
+                const uid = this.users[i];
+                cc.director.getScene().getChildByName(`uid:${uid}`).destroy();
+            }
+            this.users.splice(0, this.users.length);
             this.printCode(`agora && agora.leaveChannel();`);
         } else {
-            var channel = this.ebChannel.string;
-            if (channel == "") {
-                this.printLog("Please input channel!");
+            const channel = this.ebChannel.string;
+            if (channel === '') {
+                this.printLog('Please input channel!');
                 return;
             }
-            agora && agora.joinChannel("", channel, "", 0);
-            this.printCode(`agora && agora.joinChannel("", '${channel}', "", 0);`);
+            agora && agora.joinChannel(#YOUR_TOKEN#, channel, '', 0);
+            this.printCode(`agora && agora.joinChannel('', '${channel}', '', 0);`);
         }
     },
 
@@ -269,7 +262,7 @@ cc.Class({
         this.muteLocal = !this.muteLocal;
         this.updateMute();
         agora && agora.muteLocalAudioStream(this.muteLocal);
-        this.printLog(this.muteLocal ? "mute" : "unmute" + " local audio");
+        this.printLog(`${this.muteLocal ? 'mute' : 'unmute'} local audio`);
         this.printCode(`agora && agora.muteLocalAudioStream(${this.muteLocal});`);
     },
 
@@ -277,7 +270,7 @@ cc.Class({
         this.muteRemote = !this.muteRemote;
         this.updateMute();
         agora && agora.muteAllRemoteAudioStreams(this.muteRemote)
-        this.printLog(this.muteRemote ? "mute" : "unmute" + " remote audio");
+        this.printLog(`${this.muteRemote ? 'mute' : 'unmute'} remote audio`);
         this.printCode(`agora && agora.muteAllRemoteAudioStreams(${this.muteRemote});`);
     },
 
@@ -316,32 +309,33 @@ cc.Class({
     },
 
     printCode: function (code) {
-        this.printLog("   ");
-        this.printLog("---------- Sample code start ----------");
+        this.printLog('   ');
+        this.printLog('---------- Sample code start ----------');
         this.printLog(code);
-        this.printLog("---------- Sample code end   ----------");
-        this.printLog("   ");
+        this.printLog('---------- Sample code end ----------');
+        this.printLog('   ');
     },
 
     printLog: function (info) {
-        var item = cc.instantiate(this.itemTemplate);
+        const item = cc.instantiate(this.itemTemplate);
         this.logListView.content.addChild(item);
         item.getComponent('Item').updateItem(info);
         this.logListView.scrollToBottom(0.1);
     },
 
     onJoinChannelSuccess: function (channel, uid, elapsed) {
-        // agora && agora.muteLocalAudioStream(this.muteLocal);
-        // agora && agora.muteAllRemoteAudioStreams(this.muteRemote);
+        this.printLog(`onJoinChannelSuccess ${channel} ${uid} ${elapsed}`);
+
+        agora && agora.muteLocalAudioStream(this.muteLocal);
+        agora && agora.muteAllRemoteAudioStreams(this.muteRemote);
         this.btnLocal.interactable = true;
         this.btnRemote.interactable = true;
         this.joined = true;
         this.initMultiLang();
-        this.printLog("Join channel success, channel: " + channel + " uid: " + uid + " elapsed: " + elapsed);
     },
 
-    onLeaveChannel: function (stat) {
-        this.printLog("Leave channel success");
+    onLeaveChannel: function (stats) {
+        this.printLog(`onLeaveChannel ${JSON.stringify(stats)}`);
         this.btnLocal.interactable = false;
         this.btnRemote.interactable = false;
         this.joined = false;
@@ -349,70 +343,82 @@ cc.Class({
     },
 
     onRejoinChannelSuccess: function (channel, uid, elapsed) {
-        this.printLog("onRejoinChannelSuccess, channel: " + channel + " uid: " + uid + " elapsed: " + elapsed);
+        this.printLog(`onRejoinChannelSuccess ${channel} ${uid} ${elapsed}`);
     },
 
     onWarning: function (warn, msg) {
-        this.printLog("onWarning, warn: " + warn + " msg: " + msg);
+        this.printLog(`onWarning ${warn} ${msg}`);
     },
 
-    onError: function (warn, msg) {
-        this.printLog("onError, warn: " + warn + " msg: " + msg);
+    onError: function (err, msg) {
+        this.printLog(`onError ${err} ${msg}`);
     },
 
     onAudioQuality: function (uid, quality, delay, lost) {
-        cc.log("onAudioQuality, uid: " + uid + " quality: " + quality + " delay: " + delay + " lost: " + lost);
+        this.printLog(`onAudioQuality ${uid} ${quality} ${delay} ${lost}`);
     },
 
     onAudioVolumeIndication: function (speakers, speakerNumber, totalVolume) {
-        this.printLog("[js]onAudioVolumeIndication, speakerNumber: %d, totalVolume: %d!", speakerNumber, totalVolume);
-        for (var i = 0; i < speakerNumber; i++) {
-            if (speakers[i].uid == 0 && speakerNumber == 1) {
-                this.printLog("[js]onAudioVolumeIndication, Local Speaker: [%d], uid: %d, volume: %d", i, speakers[i].uid, speakers[i].volume);
-                return;
-            } else {
-                this.printLog("[js]onAudioVolumeIndication, Remote Speaker: [%d], uid: %d, volume: %d", i, speakers[i].uid, speakers[i].volume);
-            }
+        this.printLog(`onAudioVolumeIndication ${speakerNumber} ${totalVolume}`);
+        for (let i = 0; i < speakerNumber; i++) {
+            this.printLog(`onAudioVolumeIndication ${speakers[i].uid === 0 ? 'local' : 'remote'} speaker ${speakers[i].uid} ${speakers[i].volume}`);
         }
     },
 
     onNetworkQuality: function (uid, txQuality, rxQuality) {
-        cc.log("onNetworkQuality, uid: " + uid + " txQuality: " + txQuality + " rxQuality: " + rxQuality);
+        this.printLog(`onNetworkQuality ${uid} ${txQuality} ${rxQuality}`);
     },
 
     onUserJoined: function (uid, elapsed) {
-        this.printLog("onUserJoined, uid: " + uid + " elapsed: " + elapsed);
+        if (this.users.indexOf(uid) === -1) {
+            this.users.push(uid);
+        }
+        this.printLog(`onUserJoined ${uid} ${elapsed}`);
+        cc.log(`users ${JSON.stringify(this.users)}`);
+
+        const render = cc.instantiate(this.target);
+        render.getComponent(VideoRender).uid = uid;
+        cc.director.getScene().addChild(render, 0, `uid:${uid}`);
+        render.setContentSize(160, 120);
+        render.setPosition(80, 60 + 120 * this.users.length);
     },
 
     onUserOffline: function (uid, reason) {
-        this.printLog("onUserOffline, uid: " + uid + " reason: " + reason);
+        const index = this.users.indexOf(uid);
+        if (index !== -1) {
+            this.users.splice(index, 1);
+        }
+        this.printLog(`onUserOffline ${uid} ${reason}`);
+        cc.log(`users ${JSON.stringify(this.users)}`);
+
+        cc.director.getScene().getChildByName(`uid:${uid}`).destroy();
     },
 
     onUserMuteAudio: function (uid, muted) {
-        this.printLog("onUserMuteAudio, uid: " + uid + " muted: " + muted);
+        this.printLog(`onUserMuteAudio ${uid} ${muted}`);
     },
 
     onAudioRoutingChanged: function (routing) {
-
+        this.printLog(`onAudioRoutingChanged ${routing}`);
     },
 
     onConnectionLost: function () {
-        this.printLog("onConnectionLost");
+        this.printLog('onConnectionLost');
     },
 
     onConnectionInterrupted: function () {
-        this.printLog("onConnectionInterrupted");
+        this.printLog('onConnectionInterrupted');
     },
 
     onRequestToken: function () {
-        this.printLog("onRequestToken");
+        this.printLog('onRequestToken');
     },
 
     onConnectionBanned: function () {
-        this.printLog("onConnectionBanned");
+        this.printLog('onConnectionBanned');
     },
 
     onClientRoleChanged: function (oldRole, newRole) {
-        this.printLog("onClientRoleChanged");
+        this.printLog(`onClientRoleChanged ${oldRole} ${newRole}`);
     },
 });

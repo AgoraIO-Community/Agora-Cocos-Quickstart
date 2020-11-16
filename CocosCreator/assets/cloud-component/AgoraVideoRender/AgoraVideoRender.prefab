@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "VideoRender",
+    "_name": "AgoraVideoRender",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -126,7 +126,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "e2f0864b-8a04-4720-b495-6557fe934363"
     },
     "fileId": "5b+JrHgiFMabjat1yDL4Ik",
     "sync": false

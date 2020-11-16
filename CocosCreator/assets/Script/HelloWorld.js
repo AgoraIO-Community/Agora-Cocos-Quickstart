@@ -1,4 +1,4 @@
-const VideoRender = require('VideoRender');
+const AgoraVideoRender = require('AgoraVideoRender');
 
 cc.Class({
     extends: cc.Component,
@@ -343,30 +343,30 @@ cc.Class({
     },
 
     onRejoinChannelSuccess: function (channel, uid, elapsed) {
-        this.printLog(`onRejoinChannelSuccess ${channel} ${uid} ${elapsed}`);
+        console.log(`onRejoinChannelSuccess ${channel} ${uid} ${elapsed}`);
     },
 
     onWarning: function (warn, msg) {
-        this.printLog(`onWarning ${warn} ${msg}`);
+        console.log(`onWarning ${warn} ${msg}`);
     },
 
     onError: function (err, msg) {
-        this.printLog(`onError ${err} ${msg}`);
+        console.log(`onError ${err} ${msg}`);
     },
 
     onAudioQuality: function (uid, quality, delay, lost) {
-        this.printLog(`onAudioQuality ${uid} ${quality} ${delay} ${lost}`);
+        console.log(`onAudioQuality ${uid} ${quality} ${delay} ${lost}`);
     },
 
     onAudioVolumeIndication: function (speakers, speakerNumber, totalVolume) {
-        this.printLog(`onAudioVolumeIndication ${speakerNumber} ${totalVolume}`);
+        console.log(`onAudioVolumeIndication ${speakerNumber} ${totalVolume}`);
         for (let i = 0; i < speakerNumber; i++) {
-            this.printLog(`onAudioVolumeIndication ${speakers[i].uid === 0 ? 'local' : 'remote'} speaker ${speakers[i].uid} ${speakers[i].volume}`);
+            console.log(`onAudioVolumeIndication ${speakers[i].uid === 0 ? 'local' : 'remote'} speaker ${speakers[i].uid} ${speakers[i].volume}`);
         }
     },
 
     onNetworkQuality: function (uid, txQuality, rxQuality) {
-        this.printLog(`onNetworkQuality ${uid} ${txQuality} ${rxQuality}`);
+        console.log(`onNetworkQuality ${uid} ${txQuality} ${rxQuality}`);
     },
 
     onUserJoined: function (uid, elapsed) {
@@ -377,7 +377,7 @@ cc.Class({
         cc.log(`users ${JSON.stringify(this.users)}`);
 
         const render = cc.instantiate(this.target);
-        render.getComponent(VideoRender).uid = uid;
+        render.getComponent(AgoraVideoRender).uid = uid;
         cc.director.getScene().addChild(render, 0, `uid:${uid}`);
         render.setContentSize(160, 120);
         render.setPosition(80, 60 + 120 * this.users.length);
@@ -395,30 +395,30 @@ cc.Class({
     },
 
     onUserMuteAudio: function (uid, muted) {
-        this.printLog(`onUserMuteAudio ${uid} ${muted}`);
+        console.log(`onUserMuteAudio ${uid} ${muted}`);
     },
 
     onAudioRoutingChanged: function (routing) {
-        this.printLog(`onAudioRoutingChanged ${routing}`);
+        console.log(`onAudioRoutingChanged ${routing}`);
     },
 
     onConnectionLost: function () {
-        this.printLog('onConnectionLost');
+        console.log('onConnectionLost');
     },
 
     onConnectionInterrupted: function () {
-        this.printLog('onConnectionInterrupted');
+        console.log('onConnectionInterrupted');
     },
 
     onRequestToken: function () {
-        this.printLog('onRequestToken');
+        console.log('onRequestToken');
     },
 
     onConnectionBanned: function () {
-        this.printLog('onConnectionBanned');
+        console.log('onConnectionBanned');
     },
 
     onClientRoleChanged: function (oldRole, newRole) {
-        this.printLog(`onClientRoleChanged ${oldRole} ${newRole}`);
+        console.log(`onClientRoleChanged ${oldRole} ${newRole}`);
     },
 });

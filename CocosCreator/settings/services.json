@@ -10,7 +10,12 @@
 			"services": [
 				{
 					"service_id": "242",
-					"enable": true
+					"enable": true,
+					"params": {
+						"sdkType": "video",
+						"isEncrypt": true,
+						"plugin_version": "1.2.2_3.1.2"
+					}
 				},
 				{
 					"service_id": "278",
@@ -85,7 +90,12 @@
 			"services": [
 				{
 					"service_id": "242",
-					"enable": true
+					"enable": true,
+					"params": {
+						"sdkType": "video",
+						"isEncrypt": true,
+						"plugin_version": "1.2.2_3.1.2"
+					}
 				}
 			]
 		}

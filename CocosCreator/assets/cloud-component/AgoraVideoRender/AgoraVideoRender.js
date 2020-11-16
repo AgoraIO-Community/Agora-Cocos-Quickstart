@@ -5,7 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-var VideoRender = cc.Class({
+var AgoraVideoRender = cc.Class({
     extends: cc.Component,
     properties: {
         sprite: {

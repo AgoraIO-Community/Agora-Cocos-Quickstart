@@ -215,6 +215,7 @@ cc.Class({
             agora.init && agora.init(appid);
             agora.enableVideo && agora.enableVideo();
             agora.startPreview && agora.startPreview();
+            agora.enableAudioVolumeIndication && agora.enableAudioVolumeIndication(200, 3, true);
         }
         this.btnInit.interactable = false;
         this.btnJoin.interactable = true;

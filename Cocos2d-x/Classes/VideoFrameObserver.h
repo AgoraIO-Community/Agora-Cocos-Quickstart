@@ -2,8 +2,7 @@
 // Created by LXH on 2020/10/13.
 //
 
-#ifndef PROJ_ANDROID_STUDIO_CLASSES_AGORA_VIDEOFRAMEOBSERVER_H
-#define PROJ_ANDROID_STUDIO_CLASSES_AGORA_VIDEOFRAMEOBSERVER_H
+#pragma once
 
 #include <map>
 #include <mutex>
@@ -26,7 +25,7 @@ public:
 public:
   int width;
   int height;
-  std::vector<uint8_t> data;
+  uint8_t *data;
 };
 
 class VideoFrameObserver : public media::IVideoFrameObserver {
@@ -39,19 +38,14 @@ public:
 public:
   void bindTextureId(unsigned int textureId, unsigned int uid);
 
-  CacheVideoFrame *getVideoFrame(unsigned int uid);
-
 private:
   void cacheVideoFrame(unsigned int uid,
                        media::IVideoFrameObserver::VideoFrame &videoFrame);
-  static void renderTexture(unsigned int textureId,
-                            const CacheVideoFrame &frame);
+  void renderTexture(unsigned int textureId, const CacheVideoFrame &frame);
 
 private:
-  std::mutex _mutex;
   std::map<unsigned int, CacheVideoFrame> _map;
+  std::mutex mtx;
 };
 } // namespace cocos
 } // namespace agora
-
-#endif // PROJ_ANDROID_STUDIO_CLASSES_AGORA_VIDEOFRAMEOBSERVER_H

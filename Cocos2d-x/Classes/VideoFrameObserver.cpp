@@ -16,12 +16,18 @@ namespace agora {
 namespace cocos {
 void CacheVideoFrame::resetVideoFrame(
     media::IVideoFrameObserver::VideoFrame &videoFrame) {
+  auto size = videoFrame.width * videoFrame.height * 4;
+  if (size != width * height * 4) {
+    if (data) {
+      delete[] data;
+      data = new uint8_t[size];
+    } else {
+      data = new uint8_t[size];
+    }
+  }
+  memcpy(data, videoFrame.yBuffer, size);
   width = videoFrame.width;
   height = videoFrame.height;
-  auto size = width * height * 4;
-  data.resize(size);
-  data.insert(data.begin(), (uint8_t *)videoFrame.yBuffer,
-              (uint8_t *)videoFrame.yBuffer + size);
 }
 
 media::IVideoFrameObserver::VIDEO_FRAME_TYPE
@@ -50,27 +56,24 @@ void VideoFrameObserver::bindTextureId(unsigned int textureId,
   }
 }
 
-CacheVideoFrame *VideoFrameObserver::getVideoFrame(unsigned int uid) {
-  if (_map.find(uid) != _map.end()) {
-    return &_map[uid];
-  }
-  return nullptr;
-}
-
 void VideoFrameObserver::cacheVideoFrame(
     unsigned int uid, media::IVideoFrameObserver::VideoFrame &videoFrame) {
   if (_map.find(uid) == _map.end()) {
     _map[uid] = CacheVideoFrame();
   }
+  mtx.lock();
   _map[uid].resetVideoFrame(videoFrame);
+  mtx.unlock();
 }
 
 void VideoFrameObserver::renderTexture(unsigned int textureId,
                                        const CacheVideoFrame &frame) {
+  mtx.lock();
   glBindTexture(GL_TEXTURE_2D, textureId);
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, frame.width, frame.height, 0, GL_RGBA,
-               GL_UNSIGNED_BYTE, frame.data.data());
+               GL_UNSIGNED_BYTE, frame.data);
   glBindTexture(GL_TEXTURE_2D, 0);
+  mtx.unlock();
 }
 } // namespace cocos
 } // namespace agora

@@ -18,9 +18,8 @@ var AgoraVideoRender = cc.Class({
     onLoad() {
         console.log('onLoad', this.uid, this.node.width, this.node.height);
         this.texture = new cc.Texture2D();
-        this.texture.initWithData(null, cc.Texture2D.PixelFormat.RGBA4444, this.node.width, this.node.height);
-        const frame = new cc.SpriteFrame(this.texture);
-        this.sprite.spriteFrame = frame;
+        this.texture.initWithData(null, cc.Texture2D.PixelFormat.RGBA8888, this.node.width, this.node.height);
+        this.sprite.spriteFrame = new cc.SpriteFrame(this.texture);
     },
     _updateSize() {
         console.log('_updateSize', this.node.width, this.node.height);

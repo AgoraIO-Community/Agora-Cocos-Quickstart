@@ -16,6 +16,7 @@ module.exports = {
 
     load() {
         this.hookPreviewServer();
+        Editor.info(Editor.T("ccservices-agora-preview-script.load-tip"));
     },
 
     unload() {

@@ -40,9 +40,11 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.agora.rtc.internal.RtcEngineImpl;
+
 public class AppActivity extends Cocos2dxActivity {
     static {
-        System.loadLibrary("agora-rtc-sdk");
+        RtcEngineImpl.initializeNativeLibs();
     }
 
     private final static int REQUEST_CODE = 200;

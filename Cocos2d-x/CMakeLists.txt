@@ -123,10 +123,51 @@ else()
     add_subdirectory(${COCOS2DX_ROOT_PATH}/cocos/platform/android ${ENGINE_BINARY_PATH}/cocos/platform)
     target_link_libraries(${APP_NAME} -Wl,--whole-archive cpp_android_spec -Wl,--no-whole-archive)
 
-    add_library(agora-rtc-sdk SHARED IMPORTED)
-    set_target_properties(agora-rtc-sdk PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/${ANDROID_ABI}/libagora-rtc-sdk.so)
+    add_library(libagora-core SHARED IMPORTED)
+    set_target_properties(
+            libagora-core
+            PROPERTIES IMPORTED_LOCATION
+            ${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/${ANDROID_ABI}/libagora-core.so
+    )
+    add_library(libagora-fdkaac SHARED IMPORTED)
+    set_target_properties(
+            libagora-fdkaac
+            PROPERTIES IMPORTED_LOCATION
+            ${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/${ANDROID_ABI}/libagora-fdkaac.so
+    )
+    add_library(libagora-ffmpeg SHARED IMPORTED)
+    set_target_properties(
+            libagora-ffmpeg
+            PROPERTIES IMPORTED_LOCATION
+            ${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/${ANDROID_ABI}/libagora-ffmpeg.so
+    )
+    add_library(libagora-mpg123 SHARED IMPORTED)
+    set_target_properties(
+            libagora-mpg123
+            PROPERTIES IMPORTED_LOCATION
+            ${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/${ANDROID_ABI}/libagora-mpg123.so
+    )
+    add_library(libagora-rtc-sdk SHARED IMPORTED)
+    set_target_properties(
+            libagora-rtc-sdk
+            PROPERTIES IMPORTED_LOCATION
+            ${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/${ANDROID_ABI}/libagora-rtc-sdk.so
+    )
+    add_library(libagora-soundtouch SHARED IMPORTED)
+    set_target_properties(
+            libagora-soundtouch
+            PROPERTIES IMPORTED_LOCATION
+            ${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/${ANDROID_ABI}/libagora-soundtouch.so
+    )
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/sdk/android/agora/include/)
-    target_link_libraries(${APP_NAME} agora-rtc-sdk)
+    target_link_libraries(${APP_NAME}
+            libagora-core
+            libagora-fdkaac
+            libagora-ffmpeg
+            libagora-mpg123
+            libagora-rtc-sdk
+            libagora-soundtouch
+    )
 endif()
 
 target_link_libraries(${APP_NAME} cocos2d)

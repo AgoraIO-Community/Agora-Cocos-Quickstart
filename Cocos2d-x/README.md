@@ -35,7 +35,7 @@ This only for Cocos2d-x 3.x version，if you want to use 4.x version，please re
 
 - Click [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) and download iOS SDK from **Video SDK**.
 
-- Unzip and copy **libs/\*.framework** to **sdk/ios/agora** folder. If you want to support simulator, you should use **libs/ALL_ARCHITECTURE/\*.framework** instead of。
+- Unzip and copy **libs/\*.xcframework** to **sdk/ios/agora** folder.
 
 - Use Xcode to open **proj.ios_mac/Hello-Cocos2d-Agora.xcodeproj** project，connect the device, build and run.
 
@@ -47,7 +47,7 @@ This only for Cocos2d-x 3.x version，if you want to use 4.x version，please re
 
 ## Connect Us
 
-- You can find full API document at [Document Center](https://docs.agora.io/en)
+- You can find full API documents at [Document Center](https://docs.agora.io/en)
 - You can file bugs about this demo at [issue](https://github.com/AgoraIO-Community/Agora-Cocos-Quickstart/issues)
 
 ## License

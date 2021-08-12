@@ -17,11 +17,11 @@
 #define AGORA_APP_ID <#YOUR APP ID#>
 ```
 
-本示例项目依赖于开源的 [Cocos2d-x](https://www.cocos.com/products#Cocos2d-x) 项目，下载 [Cocos2d-x SDK](https://www.cocos.com/cocos2dx)，并用相应内容来替换本项目下的 **cocos2d** 文件夹。
+本示例项目依赖于开源的 [Cocos2d-x](https://www.cocos.com/products#Cocos2d-x) 项目，下载 [Cocos2d-x SDK](https://www.cocos.com/cocos2dx) ，并用相应内容来替换本项目下的 **cocos2d** 文件夹。
 
 **提示**
 
-此方式只适用于 Cocos2d-x 3.x 版本，如果使用4.x版本，请参考[官方升级文档](https://docs.cocos.com/cocos2d-x/v4/manual/zh/upgradeGuide/migration.html)。
+此方式只适用于 Cocos2d-x 3.x 版本，如果使用4.x版本，请参考[官方升级文档](https://docs.cocos.com/cocos2d-x/v4/manual/zh/upgradeGuide/migration.html) 。
 
 ### **运行 Android 项目**
 
@@ -35,7 +35,7 @@
 
 - 在 [Agora SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 下载 **视频通话/视频互动直播 SDK** iOS SDK。
 
-- 解压后将其中的 **libs/\*.framework** 复制到本项目的 **sdk/ios/agora** 下。如果您需要支持模拟器，则需要用 **libs/ALL_ARCHITECTURE/\*.framework** 来代替。
+- 解压后将其中的 **libs/\*.xcframework** 复制到本项目的 **sdk/ios/agora** 下。
 
 - 使用 Xcode 打开 **proj.ios_mac/Hello-Cocos2d-Agora.xcodeproj** 工程文件，连上设备，编译并运行。
 

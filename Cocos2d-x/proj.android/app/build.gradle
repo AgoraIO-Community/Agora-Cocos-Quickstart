@@ -52,7 +52,7 @@ android {
         manifest.srcFile "AndroidManifest.xml"
         assets.srcDir "../../Resources"
         if (PROP_BUILD_TYPE == 'cmake') {
-            jniLibs.srcDirs "../../sdk/android/agora"
+            jniLibs.srcDirs "../../../libs/android"
         }
     }
 

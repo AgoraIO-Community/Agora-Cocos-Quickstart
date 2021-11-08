@@ -64,22 +64,28 @@
 		F5021CE225498EBD00E16D98 /* TextBox.png in Resources */ = {isa = PBXBuildFile; fileRef = F5021CC52549693D00E16D98 /* TextBox.png */; };
 		F5021CE425498ECC00E16D98 /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5021CBF2549693100E16D98 /* TextBox.cpp */; };
 		F556A25F25510BA700B0140F /* VideoFrameObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F556A25C25510BA700B0140F /* VideoFrameObserver.cpp */; };
-		F561C92126C51E4500815075 /* AgoraRtcKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91926C51E4400815075 /* AgoraRtcKit.xcframework */; };
-		F561C92226C51E4500815075 /* AgoraRtcKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91926C51E4400815075 /* AgoraRtcKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F561C92326C51E4500815075 /* AgoraDav1dExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91A26C51E4400815075 /* AgoraDav1dExtension.xcframework */; };
-		F561C92426C51E4500815075 /* AgoraDav1dExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91A26C51E4400815075 /* AgoraDav1dExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F561C92526C51E4500815075 /* AgoraSoundTouch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91B26C51E4400815075 /* AgoraSoundTouch.xcframework */; };
-		F561C92626C51E4500815075 /* AgoraSoundTouch.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91B26C51E4400815075 /* AgoraSoundTouch.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F561C92726C51E4500815075 /* Agoraffmpeg.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91C26C51E4500815075 /* Agoraffmpeg.xcframework */; };
-		F561C92826C51E4500815075 /* Agoraffmpeg.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91C26C51E4500815075 /* Agoraffmpeg.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F561C92926C51E4500815075 /* AgoraCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91D26C51E4500815075 /* AgoraCore.xcframework */; };
-		F561C92A26C51E4500815075 /* AgoraCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91D26C51E4500815075 /* AgoraCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F561C92B26C51E4500815075 /* AgoraAIDenoiseExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91E26C51E4500815075 /* AgoraAIDenoiseExtension.xcframework */; };
-		F561C92C26C51E4600815075 /* AgoraAIDenoiseExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91E26C51E4500815075 /* AgoraAIDenoiseExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F561C92D26C51E4600815075 /* AgoraJNDExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91F26C51E4500815075 /* AgoraJNDExtension.xcframework */; };
-		F561C92E26C51E4600815075 /* AgoraJNDExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C91F26C51E4500815075 /* AgoraJNDExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F561C92F26C51E4600815075 /* Agorafdkaac.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F561C92026C51E4500815075 /* Agorafdkaac.xcframework */; };
-		F561C93026C51E4600815075 /* Agorafdkaac.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F561C92026C51E4500815075 /* Agorafdkaac.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F322738D013008B1DEA /* AgoraAIDenoiseExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F272738D012008B1DEA /* AgoraAIDenoiseExtension.xcframework */; };
+		F5AC8F332738D013008B1DEA /* AgoraSoundTouch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F282738D012008B1DEA /* AgoraSoundTouch.xcframework */; };
+		F5AC8F342738D013008B1DEA /* Agorafdkaac.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F292738D012008B1DEA /* Agorafdkaac.xcframework */; };
+		F5AC8F352738D013008B1DEA /* AgoraSuperResolutionExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2A2738D012008B1DEA /* AgoraSuperResolutionExtension.xcframework */; };
+		F5AC8F362738D013008B1DEA /* AgoraVideoSegmentationExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2B2738D012008B1DEA /* AgoraVideoSegmentationExtension.xcframework */; };
+		F5AC8F372738D013008B1DEA /* AgoraCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2C2738D012008B1DEA /* AgoraCore.xcframework */; };
+		F5AC8F382738D013008B1DEA /* Agoraffmpeg.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2D2738D012008B1DEA /* Agoraffmpeg.xcframework */; };
+		F5AC8F392738D013008B1DEA /* AgoraDav1dExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2E2738D012008B1DEA /* AgoraDav1dExtension.xcframework */; };
+		F5AC8F3A2738D013008B1DEA /* AgoraFDExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2F2738D012008B1DEA /* AgoraFDExtension.xcframework */; };
+		F5AC8F3B2738D013008B1DEA /* AgoraJNDExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F302738D012008B1DEA /* AgoraJNDExtension.xcframework */; };
+		F5AC8F3C2738D013008B1DEA /* AgoraRtcKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F312738D012008B1DEA /* AgoraRtcKit.xcframework */; };
+		F5AC8F3D2738D01F008B1DEA /* AgoraAIDenoiseExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F272738D012008B1DEA /* AgoraAIDenoiseExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F3E2738D01F008B1DEA /* AgoraCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2C2738D012008B1DEA /* AgoraCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F3F2738D01F008B1DEA /* AgoraDav1dExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2E2738D012008B1DEA /* AgoraDav1dExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F402738D01F008B1DEA /* AgoraFDExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2F2738D012008B1DEA /* AgoraFDExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F412738D01F008B1DEA /* Agorafdkaac.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F292738D012008B1DEA /* Agorafdkaac.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F422738D01F008B1DEA /* Agoraffmpeg.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2D2738D012008B1DEA /* Agoraffmpeg.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F432738D01F008B1DEA /* AgoraJNDExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F302738D012008B1DEA /* AgoraJNDExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F442738D01F008B1DEA /* AgoraRtcKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F312738D012008B1DEA /* AgoraRtcKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F452738D01F008B1DEA /* AgoraSoundTouch.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F282738D012008B1DEA /* AgoraSoundTouch.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F462738D01F008B1DEA /* AgoraSuperResolutionExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2A2738D012008B1DEA /* AgoraSuperResolutionExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F5AC8F472738D01F008B1DEA /* AgoraVideoSegmentationExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5AC8F2B2738D012008B1DEA /* AgoraVideoSegmentationExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,14 +133,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F561C92226C51E4500815075 /* AgoraRtcKit.xcframework in Embed Frameworks */,
-				F561C92826C51E4500815075 /* Agoraffmpeg.xcframework in Embed Frameworks */,
-				F561C93026C51E4600815075 /* Agorafdkaac.xcframework in Embed Frameworks */,
-				F561C92C26C51E4600815075 /* AgoraAIDenoiseExtension.xcframework in Embed Frameworks */,
-				F561C92E26C51E4600815075 /* AgoraJNDExtension.xcframework in Embed Frameworks */,
-				F561C92426C51E4500815075 /* AgoraDav1dExtension.xcframework in Embed Frameworks */,
-				F561C92626C51E4500815075 /* AgoraSoundTouch.xcframework in Embed Frameworks */,
-				F561C92A26C51E4500815075 /* AgoraCore.xcframework in Embed Frameworks */,
+				F5AC8F3D2738D01F008B1DEA /* AgoraAIDenoiseExtension.xcframework in Embed Frameworks */,
+				F5AC8F3E2738D01F008B1DEA /* AgoraCore.xcframework in Embed Frameworks */,
+				F5AC8F3F2738D01F008B1DEA /* AgoraDav1dExtension.xcframework in Embed Frameworks */,
+				F5AC8F402738D01F008B1DEA /* AgoraFDExtension.xcframework in Embed Frameworks */,
+				F5AC8F412738D01F008B1DEA /* Agorafdkaac.xcframework in Embed Frameworks */,
+				F5AC8F422738D01F008B1DEA /* Agoraffmpeg.xcframework in Embed Frameworks */,
+				F5AC8F432738D01F008B1DEA /* AgoraJNDExtension.xcframework in Embed Frameworks */,
+				F5AC8F442738D01F008B1DEA /* AgoraRtcKit.xcframework in Embed Frameworks */,
+				F5AC8F452738D01F008B1DEA /* AgoraSoundTouch.xcframework in Embed Frameworks */,
+				F5AC8F462738D01F008B1DEA /* AgoraSuperResolutionExtension.xcframework in Embed Frameworks */,
+				F5AC8F472738D01F008B1DEA /* AgoraVideoSegmentationExtension.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,14 +204,17 @@
 		F5021CC72549693D00E16D98 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
 		F556A25C25510BA700B0140F /* VideoFrameObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoFrameObserver.cpp; sourceTree = "<group>"; };
 		F556A25E25510BA700B0140F /* VideoFrameObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoFrameObserver.h; sourceTree = "<group>"; };
-		F561C91926C51E4400815075 /* AgoraRtcKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraRtcKit.xcframework; path = ../sdk/ios/agora/AgoraRtcKit.xcframework; sourceTree = "<group>"; };
-		F561C91A26C51E4400815075 /* AgoraDav1dExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraDav1dExtension.xcframework; path = ../sdk/ios/agora/AgoraDav1dExtension.xcframework; sourceTree = "<group>"; };
-		F561C91B26C51E4400815075 /* AgoraSoundTouch.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraSoundTouch.xcframework; path = ../sdk/ios/agora/AgoraSoundTouch.xcframework; sourceTree = "<group>"; };
-		F561C91C26C51E4500815075 /* Agoraffmpeg.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Agoraffmpeg.xcframework; path = ../sdk/ios/agora/Agoraffmpeg.xcframework; sourceTree = "<group>"; };
-		F561C91D26C51E4500815075 /* AgoraCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraCore.xcframework; path = ../sdk/ios/agora/AgoraCore.xcframework; sourceTree = "<group>"; };
-		F561C91E26C51E4500815075 /* AgoraAIDenoiseExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraAIDenoiseExtension.xcframework; path = ../sdk/ios/agora/AgoraAIDenoiseExtension.xcframework; sourceTree = "<group>"; };
-		F561C91F26C51E4500815075 /* AgoraJNDExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraJNDExtension.xcframework; path = ../sdk/ios/agora/AgoraJNDExtension.xcframework; sourceTree = "<group>"; };
-		F561C92026C51E4500815075 /* Agorafdkaac.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Agorafdkaac.xcframework; path = ../sdk/ios/agora/Agorafdkaac.xcframework; sourceTree = "<group>"; };
+		F5AC8F272738D012008B1DEA /* AgoraAIDenoiseExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraAIDenoiseExtension.xcframework; path = ../../libs/ios/AgoraAIDenoiseExtension.xcframework; sourceTree = "<group>"; };
+		F5AC8F282738D012008B1DEA /* AgoraSoundTouch.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraSoundTouch.xcframework; path = ../../libs/ios/AgoraSoundTouch.xcframework; sourceTree = "<group>"; };
+		F5AC8F292738D012008B1DEA /* Agorafdkaac.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Agorafdkaac.xcframework; path = ../../libs/ios/Agorafdkaac.xcframework; sourceTree = "<group>"; };
+		F5AC8F2A2738D012008B1DEA /* AgoraSuperResolutionExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraSuperResolutionExtension.xcframework; path = ../../libs/ios/AgoraSuperResolutionExtension.xcframework; sourceTree = "<group>"; };
+		F5AC8F2B2738D012008B1DEA /* AgoraVideoSegmentationExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraVideoSegmentationExtension.xcframework; path = ../../libs/ios/AgoraVideoSegmentationExtension.xcframework; sourceTree = "<group>"; };
+		F5AC8F2C2738D012008B1DEA /* AgoraCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraCore.xcframework; path = ../../libs/ios/AgoraCore.xcframework; sourceTree = "<group>"; };
+		F5AC8F2D2738D012008B1DEA /* Agoraffmpeg.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Agoraffmpeg.xcframework; path = ../../libs/ios/Agoraffmpeg.xcframework; sourceTree = "<group>"; };
+		F5AC8F2E2738D012008B1DEA /* AgoraDav1dExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraDav1dExtension.xcframework; path = ../../libs/ios/AgoraDav1dExtension.xcframework; sourceTree = "<group>"; };
+		F5AC8F2F2738D012008B1DEA /* AgoraFDExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraFDExtension.xcframework; path = ../../libs/ios/AgoraFDExtension.xcframework; sourceTree = "<group>"; };
+		F5AC8F302738D012008B1DEA /* AgoraJNDExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraJNDExtension.xcframework; path = ../../libs/ios/AgoraJNDExtension.xcframework; sourceTree = "<group>"; };
+		F5AC8F312738D012008B1DEA /* AgoraRtcKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraRtcKit.xcframework; path = ../../libs/ios/AgoraRtcKit.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,10 +222,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5AC8F322738D013008B1DEA /* AgoraAIDenoiseExtension.xcframework in Frameworks */,
+				F5AC8F332738D013008B1DEA /* AgoraSoundTouch.xcframework in Frameworks */,
+				F5AC8F342738D013008B1DEA /* Agorafdkaac.xcframework in Frameworks */,
+				F5AC8F352738D013008B1DEA /* AgoraSuperResolutionExtension.xcframework in Frameworks */,
+				F5AC8F362738D013008B1DEA /* AgoraVideoSegmentationExtension.xcframework in Frameworks */,
+				F5AC8F372738D013008B1DEA /* AgoraCore.xcframework in Frameworks */,
+				F5AC8F382738D013008B1DEA /* Agoraffmpeg.xcframework in Frameworks */,
+				F5AC8F392738D013008B1DEA /* AgoraDav1dExtension.xcframework in Frameworks */,
+				F5AC8F3A2738D013008B1DEA /* AgoraFDExtension.xcframework in Frameworks */,
+				F5AC8F3B2738D013008B1DEA /* AgoraJNDExtension.xcframework in Frameworks */,
+				F5AC8F3C2738D013008B1DEA /* AgoraRtcKit.xcframework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
-				F561C92126C51E4500815075 /* AgoraRtcKit.xcframework in Frameworks */,
-				F561C92926C51E4500815075 /* AgoraCore.xcframework in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -221,15 +242,9 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
-				F561C92526C51E4500815075 /* AgoraSoundTouch.xcframework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
-				F561C92B26C51E4500815075 /* AgoraAIDenoiseExtension.xcframework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
-				F561C92326C51E4500815075 /* AgoraDav1dExtension.xcframework in Frameworks */,
-				F561C92D26C51E4600815075 /* AgoraJNDExtension.xcframework in Frameworks */,
-				F561C92F26C51E4600815075 /* Agorafdkaac.xcframework in Frameworks */,
-				F561C92726C51E4500815075 /* Agoraffmpeg.xcframework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 			);
@@ -310,14 +325,17 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F561C91E26C51E4500815075 /* AgoraAIDenoiseExtension.xcframework */,
-				F561C91D26C51E4500815075 /* AgoraCore.xcframework */,
-				F561C91A26C51E4400815075 /* AgoraDav1dExtension.xcframework */,
-				F561C92026C51E4500815075 /* Agorafdkaac.xcframework */,
-				F561C91C26C51E4500815075 /* Agoraffmpeg.xcframework */,
-				F561C91F26C51E4500815075 /* AgoraJNDExtension.xcframework */,
-				F561C91926C51E4400815075 /* AgoraRtcKit.xcframework */,
-				F561C91B26C51E4400815075 /* AgoraSoundTouch.xcframework */,
+				F5AC8F272738D012008B1DEA /* AgoraAIDenoiseExtension.xcframework */,
+				F5AC8F2C2738D012008B1DEA /* AgoraCore.xcframework */,
+				F5AC8F2E2738D012008B1DEA /* AgoraDav1dExtension.xcframework */,
+				F5AC8F2F2738D012008B1DEA /* AgoraFDExtension.xcframework */,
+				F5AC8F292738D012008B1DEA /* Agorafdkaac.xcframework */,
+				F5AC8F2D2738D012008B1DEA /* Agoraffmpeg.xcframework */,
+				F5AC8F302738D012008B1DEA /* AgoraJNDExtension.xcframework */,
+				F5AC8F312738D012008B1DEA /* AgoraRtcKit.xcframework */,
+				F5AC8F282738D012008B1DEA /* AgoraSoundTouch.xcframework */,
+				F5AC8F2A2738D012008B1DEA /* AgoraSuperResolutionExtension.xcframework */,
+				F5AC8F2B2738D012008B1DEA /* AgoraVideoSegmentationExtension.xcframework */,
 				294D0D631D0D56D500F7F5D4 /* CoreText.framework */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,

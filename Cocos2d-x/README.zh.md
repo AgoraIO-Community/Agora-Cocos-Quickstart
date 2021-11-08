@@ -27,7 +27,7 @@
 
 - 在 [Agora SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 下载 **视频通话/视频互动直播 SDK** 中的Android SDK。
 
-- 解压后将其中的 **libs/agora-rtc-sdk.jar** 复制到本项目的 **sdk/android/lib** 下，将 **libs** 中的 .h 文件和 .so 文件分别复制到本项目的 **sdk/android/agora/** 下对应的目录中。
+- 解压后将其中的 **libs/agora-rtc-sdk.jar** 复制到本项目的 **libs/android/** 下，将 **libs** 中的 .h 文件和 .so 文件分别复制到本项目的 **libs/android/** 下对应的目录中。
 
 - 使用 Android Studio 打开 **proj.android** 目录，连上设备，编译并运行。
 
@@ -35,7 +35,7 @@
 
 - 在 [Agora SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 下载 **视频通话/视频互动直播 SDK** iOS SDK。
 
-- 解压后将其中的 **libs/\*.xcframework** 复制到本项目的 **sdk/ios/agora** 下。
+- 解压后将其中的 **libs/\*.xcframework** 复制到本项目的 **libs/ios/** 下。
 
 - 使用 Xcode 打开 **proj.ios_mac/Hello-Cocos2d-Agora.xcodeproj** 工程文件，连上设备，编译并运行。
 

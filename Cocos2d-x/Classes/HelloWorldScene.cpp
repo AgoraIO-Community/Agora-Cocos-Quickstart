@@ -158,7 +158,7 @@ bool HelloWorld::init() {
 
   float leftPadding = 10;
 
-  editBox = cocos2d::ui::EditBox::create(Size(120, 30), "TextBox.png");
+  editBox = cocos2d::ui::EditBox::create(cocos2d::Size(120, 30), "TextBox.png");
   if (editBox == nullptr) {
     problemLoading("'TextBox.png'");
   } else {

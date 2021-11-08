@@ -27,7 +27,7 @@ This only for Cocos2d-x 3.x version，if you want to use 4.x version，please re
 
 - Click [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) and download Android SDK from **Video SDK**.
 
-- Unzip and copy **libs/agora-rtc-sdk.jar** to **sdk/android/lib** folder in this project, and copy the .h and .so files from **libs** folder to the corresponding directory in **sdk/android/agora/** folder.
+- Unzip and copy **libs/agora-rtc-sdk.jar** to **libs/android/** folder in this project, and copy the .h and .so files from **libs** folder to the corresponding directory in **libs/android/** folder.
 
 - Use Android Studio to open **proj.android** folder, connect the device, build and run.
 
@@ -35,7 +35,7 @@ This only for Cocos2d-x 3.x version，if you want to use 4.x version，please re
 
 - Click [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) and download iOS SDK from **Video SDK**.
 
-- Unzip and copy **libs/\*.xcframework** to **sdk/ios/agora** folder.
+- Unzip and copy **libs/\*.xcframework** to **libs/ios/** folder.
 
 - Use Xcode to open **proj.ios_mac/Hello-Cocos2d-Agora.xcodeproj** project，connect the device, build and run.
 
